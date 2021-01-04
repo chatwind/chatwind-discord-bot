@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const fetch = require("node-fetch");
+const moment = require("moment");
 const chatwind = require("chatwind.js");
 //packges or const here!
 module.exports = {
@@ -23,13 +23,14 @@ module.exports = {
       .setDescription(`I could not find a user with the username \`${argsUser}\` in the Chatwind database.`)
       .setColor("ORANGE")
 
-    if (bodyUser.exists == "false") return message.channel.send(embedInvalid);
-    if (bodyUser.exists == "true") { var exists = "Yes"; };
-    if (bodyUser.exists == "false") { var exists = "No"; };
+    if (bodyUser.exists == false) return message.channel.send(embedInvalid);
+    if (bodyUser.exists == true) { var exists = "Yes"; };
+    if (bodyUser.exists == false) { var exists = "No"; };
 
     const embed = new Discord.MessageEmbed()
       .setTitle(`User Information for \`${bodyUser.username}\``)
       .addField(`Username:`, `${bodyUser.username}`)
+      .addField(`Joined On`, `${moment(bodyUser.created_at).format("LL")}`)
       .addField(`Exists:`, `${exists}`)
       .setColor("BLUE")
 
