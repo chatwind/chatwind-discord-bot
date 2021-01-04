@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const fetch = require("node-fetch");
+const chatwind = require("chatwind.js");
 //packges or const here!
 module.exports = {
   name: "user",
@@ -15,8 +16,7 @@ module.exports = {
 
     if (!argsUser) return message.channel.send("Please specify a valid \`USERNAME\` to lookup.");
 
-    let resUser = await fetch(`https://api.chatwind.ga/v1/user?username=${argsUser}`);
-    let bodyUser = await resUser.json();
+    let bodyUser = await chatwind.user(argsUser);
 
     const embedInvalid = new Discord.MessageEmbed()
       .setTitle(`No User Found`)
