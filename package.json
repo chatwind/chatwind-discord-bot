@@ -1,7 +1,7 @@
 {
-  "name": "support-bot",
+  "name": "chatwind-discord-bot",
   "version": "0.0.1",
-  "description": "The Slignex Support bot for our support server",
+  "description": "The Chatwind API bot. Used in the Discord server.",
   "main": "index.js",
   "scripts": {
     "start": "npm i && node index.js",
