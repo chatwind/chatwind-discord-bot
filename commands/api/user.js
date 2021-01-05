@@ -13,6 +13,7 @@ module.exports = {
 
     let argsUser = args[0];
     var exists;
+    var premium;
 
     if (!argsUser) return message.channel.send("Please specify a valid \`USERNAME\` to lookup.");
 
@@ -27,10 +28,13 @@ module.exports = {
     if (bodyUser.exists == true) { var exists = "Yes"; };
     if (bodyUser.exists == false) { var exists = "No"; };
 
+    if (bodyUser.premium_type == 0) { var premium = "No Premium"; };
+
     const embed = new Discord.MessageEmbed()
       .setTitle(`User Information for \`${bodyUser.username}\``)
       .addField(`Username:`, `${bodyUser.username}`)
       .addField(`Joined On`, `${moment(bodyUser.created_at).format("LL")}`)
+      .addField(`Premium Type`, `${premium}`)
       .addField(`Exists:`, `${exists}`)
       .setColor("BLUE")
 
