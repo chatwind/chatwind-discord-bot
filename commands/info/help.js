@@ -16,7 +16,7 @@ const embed = new Discord.MessageEmbed()
     .setDescription(`Here is a list of my commands:`)
     .addField(`Info`, `${prefix}help\n${prefix}docs`)
     .addField(`Guides`, `None`)
-    .addField(`API Interaction`, `${prefix}user <USERNAME>`)
+    .addField(`API Interaction`, `${prefix}user <USERNAME>\n${prefix}servers`)
     .setColor("BLUE")
 
 await message.channel.send(embed);
