@@ -16,6 +16,7 @@ module.exports = {
     let embed = new Discord.MessageEmbed()
       .setTitle("Chatwind Servers")
       .setDescription(serversMessage)
+      .setColor("BLUE")
 
     message.channel.send(embed)
 
