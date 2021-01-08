@@ -14,7 +14,7 @@ module.exports = {
     let serversMessage = `\`\`\`${servers.join('\n')}\`\`\``
 
     let embed = new Discord.MessageEmbed()
-      .setTitle("Chatwind Servers")
+      .setTitle("Chatwind Voice Servers")
       .setDescription(serversMessage)
       .setColor("BLUE")
 
