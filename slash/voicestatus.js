@@ -3,11 +3,11 @@ const Discord = require("discord.js");
 const fetch = require("node-fetch");
 const config = require("../config.json");
 
-module.exports = class StatusCommand extends SlashCommand {
+module.exports = class VoiceStatusCommand extends SlashCommand {
   constructor(creator) {
     super(creator, {
-      name: 'status',
-      description: 'Returns the current status of Chatwind'
+      name: 'voicestatus',
+      description: 'Returns the current status of the Chatwind voice servers'
     });
     this.filePath = __filename;
   }
@@ -17,12 +17,9 @@ module.exports = class StatusCommand extends SlashCommand {
     let statuspageURL = config.statuspageURL;
 
 
-    let statusRes = await fetch(`${statuspageURL}/api/v2/status.json`);
-        let statusBody = await statusRes.json();
     let compstatusRes = await fetch(`${statuspageURL}/api/v2/summary.json`);
         let compstatusBody = await compstatusRes.json();
 
-    let status_main = statusBody.status.description;
     let comp_status = compstatusBody.components;
     const capitalize = (s) => {
       return s.charAt(0).toUpperCase() + s.slice(1)
@@ -55,29 +52,12 @@ module.exports = class StatusCommand extends SlashCommand {
           return "Under Maintenance";
         }
     }
-    // STATUS EMOJI
-    var status_emoji;
-      if (statusBody.status.indicator === "major") {
-        var status_emoji = ":red_circle:";
-      }
-      if (statusBody.status.indicator === "none") {
-        var status_emoji = ":green_circle:";
-      }
-      if (statusBody.status.indicator === "minor") {
-        var status_emoji = ":orange_circle:";
-      }
-      if (statusBody.status.indicator === "maintenance") {
-        var status_emoji = ":blue_circle:";
-      }
 
-    let embed = new Discord.MessageEmbed()
-      .setTitle(status_emoji+" ["+status_main+"]"+" Chatwind Status")
-      .addField("**Main Website:**", `${comp_status_emote(comp_status[1].status)} ${comp_status_text(comp_status[1].status)}`)
-      .addField("**API:**", `${comp_status_emote(comp_status[2].status)} ${comp_status_text(comp_status[2].status)}`)
-      .addField("**CDN:**", `${comp_status_emote(comp_status[3].status)} ${comp_status_text(comp_status[3].status)}`)
-      .addField("**Docs:**", `${comp_status_emote(comp_status[4].status)} ${comp_status_text(comp_status[4].status)}`)
-      .setColor("BLUE")
-      .setURL(statuspageURL)
+      let embed = new Discord.MessageEmbed()
+        .setTitle(comp_status_emote(comp_status[5].status)+" ["+comp_status_text(comp_status[5].status)+"]"+" Chatwind Voice Server Status")
+        .addField("**Beta:**", `${comp_status_emote(comp_status[0].status)} ${comp_status_text(comp_status[0].status)}`)
+        .setColor("BLUE")
+        .setURL(statuspageURL)
 
     return ctx.send({embeds: [embed]}).catch(e => console.log(e));
   }
