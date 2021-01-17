@@ -71,11 +71,8 @@ module.exports = class StatusCommand extends SlashCommand {
       }
 
     let embed = new Discord.MessageEmbed()
-      .setTitle(status_emoji+" ["+status_main+"]"+" Chatwind Status")
-      .addField("**Main Website:**", `${comp_status_emote(comp_status[1].status)} ${comp_status_text(comp_status[1].status)}`)
-      .addField("**API:**", `${comp_status_emote(comp_status[2].status)} ${comp_status_text(comp_status[2].status)}`)
-      .addField("**CDN:**", `${comp_status_emote(comp_status[3].status)} ${comp_status_text(comp_status[3].status)}`)
-      .addField("**Docs:**", `${comp_status_emote(comp_status[4].status)} ${comp_status_text(comp_status[4].status)}`)
+      .setTitle("Chatwind Status")
+      .addField("**Overall Status:**", `${status_emoji} ${status_main}`)
       .setColor("BLUE")
       .setURL(statuspageURL)
 

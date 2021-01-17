@@ -65,14 +65,11 @@ module.exports = {
         var status_emoji = ":blue_circle:";
       }
 
-    let embed = new Discord.MessageEmbed()
-      .setTitle(status_emoji+" ["+status_main+"]"+" Chatwind Status")
-      .addField("**Main Website:**", `${comp_status_emote(comp_status[1].status)} ${comp_status_text(comp_status[1].status)}`)
-      .addField("**API:**", `${comp_status_emote(comp_status[2].status)} ${comp_status_text(comp_status[2].status)}`)
-      .addField("**CDN:**", `${comp_status_emote(comp_status[3].status)} ${comp_status_text(comp_status[3].status)}`)
-      .addField("**Docs:**", `${comp_status_emote(comp_status[4].status)} ${comp_status_text(comp_status[4].status)}`)
-      .setColor("BLUE")
-      .setURL(statuspageURL)
+      let embed = new Discord.MessageEmbed()
+        .setTitle("Chatwind Status")
+        .addField("**Overall Status:**", `${status_emoji} ${status_main}`)
+        .setColor("BLUE")
+        .setURL(statuspageURL)
 
     return message.channel.send(embed);
 
