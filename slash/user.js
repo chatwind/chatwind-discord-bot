@@ -26,14 +26,14 @@ module.exports = class UserCommand extends SlashCommand {
 
     if (!ctx.options.username) return ctx.send("Please specify a valid \`USERNAME\` to lookup.");
 
-    console.log(ctx.options.username);
-
     let bodyUser = await chatwind.user(ctx.options.username);
 
     const embedInvalid = new Discord.MessageEmbed()
       .setTitle(`No User Found`)
       .setDescription(`I could not find a user with the username \`${ctx.options.username}\` in the Chatwind database.`)
       .setColor("ORANGE")
+
+    if (bodyUser.blacklisted) return ctx.send({embeds: [embedInvalid]});
 
     if (bodyUser.exists == false) return ctx.send({embeds: [embedInvalid]});
     if (bodyUser.exists == true) { var exists = "Yes"; };

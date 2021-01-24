@@ -4,5 +4,8 @@
     "applicationID": "YOUR_APPLICATION_ID",
     "publicKey": "YOUR_APPLICATION_PUBLIC_KEY",
     "developers": ["YOUR_ID"],
-    "statuspageURL": "STATUSPAGEIO_URL"
+    "statuspageURL": "STATUSPAGEIO_URL",
+    "staff_key": "CHATWIND_STAFF_KEY",
+    "sitemod_id": "SITE_MODERATOR_ROLE_ID",
+    "api_url": "API_URL"
 }

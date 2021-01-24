@@ -24,6 +24,8 @@ module.exports = {
       .setDescription(`I could not find a user with the username \`${argsUser}\` in the Chatwind database.`)
       .setColor("ORANGE")
 
+    if (bodyUser.blacklisted) return message.channel.send(embedInvalid);
+
     if (bodyUser.exists == false) return message.channel.send(embedInvalid);
     if (bodyUser.exists == true) { var exists = "Yes"; };
     if (bodyUser.exists == false) { var exists = "No"; };
