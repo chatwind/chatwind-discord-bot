@@ -11,8 +11,8 @@ module.exports = {
 //your code goes here!
 const embed = new Discord.MessageEmbed()
     .setTitle(`Documentation`)
-    .setDescription(`Chatwind currently does not have an API documentation. This is currently in the works!`)
-    .setURL(``)
+    .setDescription(`You can access the Chatwind API documentation at [https://docs.chatwindapp.com](https://docs.chatwindapp.com)`)
+    .setURL(`https://docs.chatwindapp.com`)
     .setColor("BLUE")
 
 return message.channel.send(embed);
