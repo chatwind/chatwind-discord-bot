@@ -12,12 +12,14 @@ module.exports = {
   run: async (client, message, args) => {
 
     if (!message.member.roles.cache.find(r => r.id === client.config.sitemod_id)) return;
-    let user = await chatwind.user(args[0]);
-
     let nouser = new Discord.MessageEmbed()
       .setTitle("Error")
       .setDescription(`Please provide a valid user to blacklist!`)
       .setColor("ORANGE")
+
+    if (!args[0]) return message.channel.send(nouser);
+
+    let user = await chatwind.user(args[0]);
 
     if (user.exists == false) return message.channel.send(nouser);
     if (user.blacklisted) return message.channel.send(nouser);
