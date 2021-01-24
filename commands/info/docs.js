@@ -10,7 +10,7 @@ module.exports = {
     run: async (client, message, args) => {
 //your code goes here!
 const embed = new Discord.MessageEmbed()
-    .setTitle(`Documentation`)
+    .setTitle(`API Documentation`)
     .setDescription(`You can access the Chatwind API documentation at [https://docs.chatwindapp.com](https://docs.chatwindapp.com)`)
     .setURL(`https://docs.chatwindapp.com`)
     .setColor("BLUE")
