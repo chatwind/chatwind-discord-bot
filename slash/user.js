@@ -33,11 +33,20 @@ module.exports = class UserCommand extends SlashCommand {
       .setDescription(`I could not find a user with the username \`${ctx.options.username}\` in the Chatwind database.`)
       .setColor("ORANGE")
 
-    if (bodyUser.blacklisted) return ctx.send({embeds: [embedInvalid]});
+    const embedblacklist = new Discord.MessageEmbed()
+      .setTitle(`User Information for \`${bodyUser.username}\``)
+      .addField(`Username:`, `${bodyUser.username}`)
+      .addField(`Account Status:`, `Blacklisted`)
+      .addField(`Staff:`, `No`)
+      .setColor("BLUE")
+
+    if (bodyUser.blacklisted) return ctx.send({embeds: [embedblacklist]});
 
     if (bodyUser.exists == false) return ctx.send({embeds: [embedInvalid]});
     if (bodyUser.exists == true) { var exists = "Yes"; };
     if (bodyUser.exists == false) { var exists = "No"; };
+    if (bodyUser.staff_status == true) { var staff = "Yes"; };
+    if (bodyUser.staff_status == false) { var staff = "No"; };
 
     if (bodyUser.premium_type == 0) { var premium = "No Premium"; };
 
@@ -47,6 +56,7 @@ module.exports = class UserCommand extends SlashCommand {
       .addField(`Joined On`, `${moment(bodyUser.created_at).format("LL")}`)
       .addField(`Premium Type`, `${premium}`)
       .addField(`Exists:`, `${exists}`)
+      .addField(`Staff:`, `${staff}`)
       .setColor("BLUE")
 
     return ctx.send({embeds: [embed]});
