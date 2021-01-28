@@ -14,8 +14,9 @@ var prefix = client.config.prefix;
 const embed = new Discord.MessageEmbed()
     .setTitle(`Help`)
     .setDescription(`Here is a list of my commands:`)
-    .addField(`Info`, `${prefix}help\n${prefix}docs\n${prefix}status`)
+    .addField(`Info`, `${prefix}help\n${prefix}docs\n${prefix}invite\n${prefix}ping`)
     .addField(`Guides`, `None`)
+    .addField(`Website`, `${prefix}status`)
     .addField(`API Interaction`, `${prefix}user <USERNAME>\n${prefix}servers`)
     .setColor("BLUE")
 
