@@ -13,4 +13,4 @@ Legit nothing. Your data is your data. We don't need it.
 
 > I would like to have my data removed
 
-Uhhh what data?
+We don't store your data, but you can contact us with regards about the bot in our [Discord server](https://discord.gg/GUSz2Wtj9c) (https://discord.gg/GUSz2Wtj9c).
