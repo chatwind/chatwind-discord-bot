@@ -40,9 +40,9 @@ if (chatwindCustomCode.exists == false) return msg.edit("", errorEmbedNoCode);
 
 const codeEmbed = new Discord.MessageEmbed()
     .setTitle(`Custom Meeting Links`)
-    .addField("**Code**", `\`${chatwindCustomCode.code}\``, true)
-    .addField("**Licensee**", `${chatwindCustomCode.licensee}`, true)
-    .addField("**Exists**", `True`, true)
+    .addField("**Code:**", `\`${chatwindCustomCode.code}\``, true)
+    .addField("**Licensee:**", `${chatwindCustomCode.licensee}`, true)
+    .addField("**Exists:**", `True`, true)
     .setColor("GREEN")
 
 return msg.edit("", codeEmbed);
