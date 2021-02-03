@@ -40,6 +40,7 @@ module.exports = {
     if (bodyUser.staff_status == false) { var staff = "No"; };
 
     if (bodyUser.premium_type == 0) { var premium = "No Premium"; };
+    if (bodyUser.premium_type == 2) { var premium = "Education"; };
 
     const embed = new Discord.MessageEmbed()
       .setTitle(`User Information for \`${bodyUser.username}\``)

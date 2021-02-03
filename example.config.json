@@ -7,5 +7,10 @@
     "statuspageURL": "STATUSPAGEIO_URL",
     "staff_key": "CHATWIND_STAFF_KEY",
     "sitemod_id": "SITE_MODERATOR_ROLE_ID",
-    "api_url": "API_URL"
+    "channels": {
+      "updates_channel": "UPDATE_CHANNEL_ID",
+      "apiupdates_channel": "API_UPDATE_CHANNEL_ID"
+    },
+    "api_url": "API_URL",
+    "mongo_url": "MONGO_URL"
 }
