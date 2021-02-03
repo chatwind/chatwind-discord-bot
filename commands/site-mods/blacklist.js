@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const chatwind = require("chatwind.js");
 const fetch = require("node-fetch");
-let reason_count = 4;
+let reason_count = 5;
 //packges or const here!
 module.exports = {
   name: "blacklist",
