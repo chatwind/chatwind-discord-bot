@@ -5,7 +5,6 @@ const fs = require('fs');
 const client = new Client({ disableEveryone: true });
 client.categories = fs.readdirSync("./commands/");
 client.config = require('./config.json');
-client.settings = require('./settings.json');
 const creator = new SlashCreator({
   applicationID: client.config.applicationID,
   publicKey: client.config.publicKey,
