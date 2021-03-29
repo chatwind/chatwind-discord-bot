@@ -43,20 +43,18 @@ module.exports = class UserCommand extends SlashCommand {
     if (bodyUser.blacklisted) return ctx.send({embeds: [embedblacklist]});
 
     if (bodyUser.exists == false) return ctx.send({embeds: [embedInvalid]});
-    if (bodyUser.exists == true) { var exists = "Yes"; };
-    if (bodyUser.exists == false) { var exists = "No"; };
-    if (bodyUser.staff_status == true) { var staff = "Yes"; };
-    if (bodyUser.staff_status == false) { var staff = "No"; };
+    if (bodyUser.staff == true) { var staff = "Yes"; };
+    if (bodyUser.staff == false) { var staff = "No"; };
 
-    if (bodyUser.premium_type == 0) { var premium = "No Premium"; };
-    if (bodyUser.premium_type == 2) { var premium = "Education"; };
+    if (bodyUser.premium == 0) { var premium = "No Premium"; };
+    if (bodyUser.premium == 2) { var premium = "Education"; };
+    const joined_at = moment(bodyUser.created_at).format("LL");
 
     const embed = new Discord.MessageEmbed()
       .setTitle(`User Information for \`${bodyUser.username}\``)
       .addField(`Username:`, `${bodyUser.username}`)
-      .addField(`Joined On`, `${moment(bodyUser.created_at).format("LL")}`)
-      .addField(`Premium Type`, `${premium}`)
-      .addField(`Exists:`, `${exists}`)
+      .addField(`Joined On:`, `${joined_at}`)
+      .addField(`Premium Type:`, `${premium}`)
       .addField(`Staff:`, `${staff}`)
       .setColor("BLUE")
 
