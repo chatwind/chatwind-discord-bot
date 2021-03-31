@@ -11,10 +11,11 @@ module.exports = {
 //your code goes here!
 const embed = new Discord.MessageEmbed()
     .setTitle(`Chatwind Socials`)
-    .addField("`Discord`", `[GUSz2Wtj9c](https://chatwindapp.com/discord)`)
-    .addField("`Twitter`", `[@chatwindapp](https://chatwindapp.com/twitter)`)
-    .addField("`Twitch`", `[@chatwindapp](https://chatwindapp.com/twitch)`)
-    .addField("`YouTube`", `[Chatwind](https://chatwindapp.com/youtube)`)
+    .addField("<:discord_full:773730321211588666> `Discord`", `[GUSz2Wtj9c](https://chatwindapp.com/discord)`)
+    .addField("<:twitter:826929756687695882> `Twitter`", `[@chatwindapp](https://chatwindapp.com/twitter)`)
+    .addField("<:twitch:773729183532711962> `Twitch`", `[@chatwindapp](https://chatwindapp.com/twitch)`)
+    .addField("<:youtube:826929152694288445> `YouTube`", `[Chatwind](https://chatwindapp.com/youtube)`)
+    .addField("<:guilded:826930104856870943> `Guilded`", `[4kayVolk](https://chatwindapp.com/guilded)`)
     .setColor("BLUE")
 
 return message.channel.send(embed);

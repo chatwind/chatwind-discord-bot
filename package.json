@@ -1,7 +1,7 @@
 {
   "name": "chatwind-discord-bot",
   "version": "0.0.1",
-  "description": "The Chatwind API bot. Used in the Discord server.",
+  "description": "The Chatwind Discord bot. Used in the Discord server.",
   "main": "index.js",
   "scripts": {
     "start": "npm i && node index.js",
@@ -19,7 +19,6 @@
     "path": "0.12.7",
     "querystring": "^0.2.1",
     "quickmongo": "^2.0.7",
-    "slash-create": "^3.0.0",
     "superagent": "^6.0.0"
   },
   "devDependencies": {

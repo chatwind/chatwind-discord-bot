@@ -1,8 +1,6 @@
 {
     "prefix": "c!",
     "token": "YOUR_TOKEN",
-    "applicationID": "YOUR_APPLICATION_ID",
-    "publicKey": "YOUR_APPLICATION_PUBLIC_KEY",
     "developers": ["YOUR_ID"],
     "statuspageURL": "STATUSPAGEIO_URL",
     "channels": {
