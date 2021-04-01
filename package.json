@@ -10,7 +10,7 @@
   "dependencies": {
     "ascii-table": "0.0.9",
     "chalk": "4.1.0",
-    "chatwind.js": "^1.1.2",
+    "chatwind.js": "^1.1.3",
     "discord.js": "^12.5.2",
     "fs": "0.0.1-security",
     "klaw": "^3.0.0",
