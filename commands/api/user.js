@@ -11,14 +11,14 @@ module.exports = {
   dev: false,
   run: async (client, message, args) => {
 
-return message.channel.send("<a:loading:784127487118016573> Fetching data from the Chatwind API. Please wait").then(async (msg) => {
-
     let argsUser = args[0];
     var exists;
     var premium;
     var staff;
 
     if (!argsUser) return message.channel.send("Please specify a valid \`USERNAME\` to lookup.");
+
+return message.channel.send("<a:loading:784127487118016573> Fetching data from the Chatwind API. Please wait").then(async (msg) => {
 
     let bodyUser = await chatwind.user(argsUser);
 
@@ -34,8 +34,8 @@ return message.channel.send("<a:loading:784127487118016573> Fetching data from t
       .addField(`Staff:`, `No`)
       .setColor("BLUE")
 
-    if (bodyUser.blacklisted) return message.channel.send(embedblacklist);
-    if (bodyUser.message == "User not found") return message.channel.send(embedInvalid);
+    if (bodyUser.blacklisted) return msg.edit("", embedblacklist);
+    if (bodyUser.message == "User not found") return msg.edit("", embedInvalid);
 
     if (bodyUser.staff == true) { var staff = "Yes"; };
     if (bodyUser.staff == false) { var staff = "No"; };
