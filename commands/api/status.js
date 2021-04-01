@@ -9,6 +9,9 @@ module.exports = {
   usage: "status",
   dev: false,
   run: async (client, message, args) => {
+
+return message.channel.send("<a:loading:784127487118016573> Fetching the current Chatwind status. Please wait").then( async (msg) => {
+
     let statuspageURL = client.config.statuspageURL;
 
 
@@ -71,7 +74,8 @@ module.exports = {
         .setColor("BLUE")
         .setURL(statuspageURL)
 
-    return message.channel.send(embed);
+    return msg.edit("", embed);
+});
 
   }
 }

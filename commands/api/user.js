@@ -11,6 +11,8 @@ module.exports = {
   dev: false,
   run: async (client, message, args) => {
 
+return message.channel.send("<a:loading:784127487118016573> Fetching data from the Chatwind API. Please wait").then(async (msg) => {
+
     let argsUser = args[0];
     var exists;
     var premium;
@@ -33,6 +35,7 @@ module.exports = {
       .setColor("BLUE")
 
     if (bodyUser.blacklisted) return message.channel.send(embedblacklist);
+    if (bodyUser.message == "User not found") return message.channel.send(embedInvalid);
 
     if (bodyUser.staff == true) { var staff = "Yes"; };
     if (bodyUser.staff == false) { var staff = "No"; };
@@ -49,7 +52,8 @@ module.exports = {
       .addField(`Staff:`, `${staff}`)
       .setColor("BLUE")
 
-    await message.channel.send(embed).catch(e => e);
+    await msg.edit("", embed);
+});
 
   }
 }
