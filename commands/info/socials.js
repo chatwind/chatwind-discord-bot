@@ -15,7 +15,6 @@ const embed = new Discord.MessageEmbed()
     .addField("<:twitter:826929756687695882> `Twitter`", `[@chatwindapp](https://chatwindapp.com/twitter)`)
     .addField("<:twitch:773729183532711962> `Twitch`", `[@chatwindapp](https://chatwindapp.com/twitch)`)
     .addField("<:youtube:826929152694288445> `YouTube`", `[Chatwind](https://chatwindapp.com/youtube)`)
-    .addField("<:guilded:826930104856870943> `Guilded`", `[4kayVolk](https://chatwindapp.com/guilded)`)
     .setColor("BLUE")
 
 return message.channel.send(embed);

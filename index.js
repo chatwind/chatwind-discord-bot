@@ -2,22 +2,20 @@ const { Client, Collection } = require("discord.js");
 const path = require('path');
 const fs = require('fs');
 const client = new Client({ disableEveryone: true });
+const { Database } = require("quickmongo");
+
 client.categories = fs.readdirSync("./commands/");
 client.config = require('./config.json');
 
 
 client.commands = new Collection();
 client.aliases = new Collection();
+client.db = new Database(client.config.mongo_url);
 
-// 'client.on('message')' commands are triggered when the
-// specified message is read in a text channel that the bot is in.
+["command", "events"].forEach(handler => {
+  require(`./handlers/${handler}`)(client);
+})
 
-client.login(client.config.token).then(async (token) => {
-
-  ["command", "events"].forEach(handler => {
-    require(`./handlers/${handler}`)(client);
-  })
-
-}).catch((e) => {
+client.login(client.config.token).catch((e) => {
   console.log(e)
 });

@@ -17,7 +17,6 @@ module.exports = (client) => {
       let eName = path.basename(fp).replace(".js","");
       client.on(eName, evt.bind(null, client));
     })
-    client.emit('ready')
   })
   
 }

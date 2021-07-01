@@ -11,9 +11,9 @@ module.exports = {
 //your code goes here!
 let embed = new Discord.MessageEmbed()
   .setTitle("Invite \`Chatwind Discord Bot\`")
-  .setDescription("Invite the bot [here](https://chatwindapp.com/discordbot).")
+  .setDescription("Invite the bot [using this link](https://discord.com/oauth2/authorize?client_id=795537043069468713&scope=bot&permissions=379968).")
   .setColor("BLUE")
-  .setURL("https://chatwindapp.com/discordbot")
+  .setURL("https://discord.com/oauth2/authorize?client_id=795537043069468713&scope=bot&permissions=379968")
 
 return message.channel.send(embed);
 //end code
