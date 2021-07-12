@@ -23,7 +23,7 @@
     "lodash": ">=4.17.21"
   },
   "devDependencies": {
-    "nodemon": "^2.0.9"
+    "nodemon": "^2.0.12"
   },
   "engines": {
     "node": "14.x"
